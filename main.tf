@@ -1,4 +1,4 @@
-resource "google_storage_bucket" "my-bucket" {
+resource "google_storage_bucket" "navin-bucket2025" {
   name                     = "tt-githubdemo-bucket-001"
   project                  = "basic-cabinet-466904-a5"
   location                 = "US"
