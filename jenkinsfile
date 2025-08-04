@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-               git "https://$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@github.com/vishal-bulbule/gcp-tf-jenkin.git"
+               git "https://${git-token}@github.com/NavinKumarbanu/gcp-tf-jenkins.git"
             }
         }
         
