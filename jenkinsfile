@@ -3,29 +3,32 @@ pipeline {
 	
     environment {
         GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp-key')
-	GIT_TOKEN = credentials('git-token')
+        GIT_TOKEN = credentials('git-token')
     }
 	
     stages {
         stage('Git Checkout') {
             steps {
-               git "https://${git-token}@github.com/NavinKumarbanu/gcp-tf-jenkins.git"
+                checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: '*/main']],
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/NavinKumarbanu/gcp-tf-jenkins.git',
+                        credentialsId: 'git-token'
+                    ]]
+                ])
             }
         }
         
         stage('Terraform Init') {
             steps {
-                script {
-                    sh 'terraform init'
-                }
+                sh 'terraform init'
             }
         }
         
         stage('Terraform Plan') {
             steps {
-                script {
-                    sh 'terraform plan -out=tfplan'
-                }
+                sh 'terraform plan -out=tfplan'
             }
         }
 
@@ -37,9 +40,7 @@ pipeline {
 	    
         stage('Terraform Apply') {
             steps {
-                script {
-                    sh 'terraform apply tfplan'
-                }
+                sh 'terraform apply tfplan'
             }
         }
     }
