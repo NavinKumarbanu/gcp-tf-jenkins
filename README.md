@@ -15,6 +15,10 @@ Trigger Terraform deployment automatically on code push
 Use Google Cloud Service Account credentials securely
 
 
+<img width="1333" height="871" alt="Screenshot from 2025-08-04 09-03-32" src="https://github.com/user-attachments/assets/4b6cdfc3-afa8-4684-ab60-2935e52a3e55" />
+
+
+
 ## ⚙️ Tools & Technologies Used
 | Tool             | Purpose                                   |
 | ---------------- | ----------------------------------------- |
@@ -35,3 +39,12 @@ Use Google Cloud Service Account credentials securely
 4. Jenkins runs terraform init, plan, and apply
 
 5. GCP infrastructure is created/updated accordingly
+
+   <img width="1846" height="1000" alt="Screenshot from 2025-08-04 09-23-42" src="https://github.com/user-attachments/assets/4ac91f54-13a3-461d-b741-ce47b7e2ca74" />
+
+   <img width="1846" height="1000" alt="Screenshot from 2025-08-04 14-14-30" src="https://github.com/user-attachments/assets/ee4d57f9-4e3b-43c4-b4db-9204e0e6752d" />
+
+   <img width="1583" height="83" alt="Screenshot from 2025-08-04 14-23-33" src="https://github.com/user-attachments/assets/568ed5d5-d3f5-44c0-82d8-e2803bdf998b" />
+
+
+
